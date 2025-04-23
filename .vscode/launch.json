@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:GamepadSwift}",
+            "name": "Debug GamepadSwift",
+            "program": "${workspaceFolder:GamepadSwift}/.build/debug/GamepadSwift",
+            "preLaunchTask": "swift: Build Debug GamepadSwift"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:GamepadSwift}",
+            "name": "Release GamepadSwift",
+            "program": "${workspaceFolder:GamepadSwift}/.build/release/GamepadSwift",
+            "preLaunchTask": "swift: Build Release GamepadSwift"
+        }
+    ]
+}
