@@ -59,11 +59,6 @@ public struct ButtonMappingConfig: Codable {
         case "mouseMove":
             let dx = Double(params["dx"] ?? "0") ?? 0
             let dy = Double(params["dy"] ?? "0") ?? 0
-
-            let wheeldirection = params["wheeldirection"] ?? "win"
-            if wheeldirection == "win" {
-                return .mouseMove(dx: dx, dy: -dy)
-            }
             return .mouseMove(dx: dx, dy: dy)
             
         case "mouseLeftClick":
