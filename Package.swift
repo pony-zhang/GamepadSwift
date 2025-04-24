@@ -16,7 +16,10 @@ let package = Package(
         .executableTarget(
             name: "GamepadSwift",
             dependencies: [],
-            path: "Sources"
+            path: "Sources",
+            resources: [
+                .process("Resources")
+            ]
         )
     ]
 )

@@ -1,0 +1,71 @@
+{
+    "version": "1.0",
+    "name": "Default Configuration",
+    "buttonMappings": [
+        {
+            "buttonId": "leftStick",
+            "actionType": "mouseMove",
+            "actionParams": {
+                "wheeldirection": "win"
+            },
+            "sensitivity": 15.0,
+            "deadzone": 0.1
+        },
+        {
+            "buttonId": "buttonA",
+            "actionType": "mouseLeftClick",
+            "actionParams": {},
+            "sensitivity": 1.0,
+            "deadzone": 0.1
+        },
+        {
+            "buttonId": "buttonB",
+            "actionType": "mouseRightClick",
+            "actionParams": {},
+            "sensitivity": 1.0,
+            "deadzone": 0.1
+        },
+        {
+            "buttonId": "buttonX",
+            "actionType": "keyPress",
+            "actionParams": {
+                "keyCode": "49"
+            },
+            "sensitivity": 1.0,
+            "deadzone": 0.1
+        },
+        {
+            "buttonId": "buttonY",
+            "actionType": "keyPress",
+            "actionParams": {
+                "keyCode": "50"
+            },
+            "sensitivity": 1.0,
+            "deadzone": 0.1
+        },
+        {
+            "buttonId": "rightTrigger",
+            "actionType": "mouseScroll",
+            "actionParams": {
+                "dy": "-1"
+            },
+            "sensitivity": 5.0,
+            "deadzone": 0.1
+        },
+        {
+            "buttonId": "leftTrigger",
+            "actionType": "mouseScroll",
+            "actionParams": {
+                "dy": "1"
+            },
+            "sensitivity": 5.0,
+            "deadzone": 0.1
+        }
+    ],
+    "settings": {
+        "mouseSpeed": 1.0,
+        "mouseAcceleration": 1.2,
+        "stickDeadzone": 0.1,
+        "triggerDeadzone": 0.1
+    }
+}

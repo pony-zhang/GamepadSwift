@@ -6,11 +6,11 @@ public final class App {
     public static let shared = App()
     
     private init() {
-        // 初始化各个管理器
         self.gamepadManager = GamepadManager.shared
-        print("GamepadSwift App Started...")
+        print("[Status] GamepadSwift App Started")
     }
     
     public func start() {
+        gamepadManager.startMonitoring()
     }
 }
