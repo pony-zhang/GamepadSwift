@@ -26,7 +26,7 @@
     <key>NSHighResolutionCapable</key>
     <true/>
     <key>LSUIElement</key>
-    <false/>
+    <true/>  <!-- 改为 true 表示这是一个状态栏应用 -->
     <key>NSRequiresAquaSystemAppearance</key>
     <false/>
     

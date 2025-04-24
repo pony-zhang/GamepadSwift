@@ -1,10 +1,11 @@
-import Foundation
+import AppKit
 
-print("GamepadSwift is starting...")
+NSApplication.shared.setActivationPolicy(.accessory)  // 设置为状态栏应用
+
+let app = NSApplication.shared
+let delegate = AppDelegate()
+app.delegate = delegate
 
 // 启动应用
-let app = App.shared
-app.start()
-
-// 确保 RunLoop 持续运行
-RunLoop.current.run()
+_ = App.shared
+app.run()

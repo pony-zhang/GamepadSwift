@@ -48,10 +48,44 @@ hdiutil create -volname "$VOLUME_NAME" -srcfolder "$BUILD_DIR" -ov -format UDRW 
 
 # 挂载DMG
 DEVICE=$(hdiutil attach -readwrite -noverify -noautoopen "$TEMP_DMG" | awk 'NR==1{print $1}')
+VOLUME="/Volumes/$VOLUME_NAME"
 sleep 2
 
-# 添加自定义背景和布局（如果需要）
-# 这里可以添加更多自定义设置
+# 创建 Applications 链接
+echo "创建 Applications 链接..."
+ln -s /Applications "$VOLUME/Applications"
+
+# 设置DMG窗口的位置和大小
+echo "设置DMG窗口属性..."
+osascript << EOT
+tell application "Finder"
+    tell disk "$VOLUME_NAME"
+        open
+        set current view of container window to icon view
+        set toolbar visible of container window to false
+        set statusbar visible of container window to false
+        set bounds of container window to {400, 100, 900, 400}
+        set theViewOptions to the icon view options of container window
+        set arrangement of theViewOptions to not arranged
+        set icon size of theViewOptions to 72
+        
+        # 设置图标位置
+        set position of item "$APP_NAME" of container window to {140, 150}
+        set position of item "Applications" of container window to {360, 150}
+        
+        update without registering applications
+        delay 2
+        close
+    end tell
+end tell
+EOT
+
+# 设置DMG权限
+chmod -Rf go-w "$VOLUME"
+
+# 等待Finder完成操作
+sync
+sync
 
 # 卸载DMG
 echo "完成DMG配置..."

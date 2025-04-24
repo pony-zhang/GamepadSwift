@@ -247,7 +247,6 @@ public class GamepadManager {
                 gamepad.buttonMenu.valueChangedHandler = nil
             }
         }
-        controller.controllerPausedHandler = nil
     }
     
     @available(macOS 11.0, *)
