@@ -238,17 +238,39 @@ public class MouseKeyboardEmulator {
             return
         }
 
-        // 按下所有键
+        // 确保开始前所有相关按键都是释放状态
         for keyCode in keyCodes {
-            keyDown(keyCode: keyCode)
+            if pressedKeys.contains(keyCode) {
+                keyUp(keyCode: keyCode)
+            }
         }
 
-        // 短暂延迟
-        Thread.sleep(forTimeInterval: 0.05)
+        // 按下所有键
+        var pressedSuccessfully: [Int] = []
+        for keyCode in keyCodes {
+            if let event = CGEvent(keyboardEventSource: nil, virtualKey: CGKeyCode(keyCode), keyDown: true) {
+                event.post(tap: .cghidEventTap)
+                pressedKeys.insert(keyCode)
+                pressedSuccessfully.append(keyCode)
+            } else {
+                print("[Error] 无法按下按键: \(keyCode)")
+                // 如果某个按键失败，释放之前成功的按键
+                for successKey in pressedSuccessfully {
+                    keyUp(keyCode: successKey)
+                }
+                return
+            }
+            // 每个按键之间添加小延迟，确保系统能正确识别
+            usleep(10000) // 10ms delay
+        }
+
+        // 保持组合键状态一段时间
+        usleep(100000) // 100ms delay
 
         // 按相反顺序释放所有键
         for keyCode in keyCodes.reversed() {
             keyUp(keyCode: keyCode)
+            usleep(10000) // 10ms delay
         }
     }
 

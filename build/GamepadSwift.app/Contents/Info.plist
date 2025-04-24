@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- 基本信息 -->
+    <key>CFBundleIdentifier</key>
+    <string>com.yourcompany.gamepadswift</string>
+    <key>CFBundleName</key>
+    <string>游戏手柄</string>
+    <key>CFBundleDisplayName</key>
+    <string>游戏手柄</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.0</string>
+    <key>CFBundleVersion</key>
+    <string>1</string>
+    <key>CFBundleExecutable</key>
+    <string>GamepadSwift</string>
+    
+    <!-- macOS 特定设置 -->
+    <key>LSMinimumSystemVersion</key>
+    <string>12.0.0</string>
+    
+    <!-- UI 设置 -->
+    <key>NSHighResolutionCapable</key>
+    <true/>
+    <key>LSUIElement</key>
+    <false/>
+    <key>NSRequiresAquaSystemAppearance</key>
+    <false/>
+    
+    <!-- 应用程序类型设置 -->
+    <key>LSApplicationCategoryType</key>
+    <string>public.app-category.games</string>
+    
+    <!-- 主窗口设置 -->
+    <key>NSMainNibFile</key>
+    <string>MainMenu</string>
+    <key>NSPrincipalClass</key>
+    <string>NSApplication</string>
+    
+    <!-- 图标设置 - 增加完整配置 -->
+    <key>CFBundleIconFile</key>
+    <string>AppIcon</string>
+    <key>CFBundleIconName</key>
+    <string>AppIcon</string>
+    
+    <!-- 权限描述 -->
+    <key>NSAppleEventsUsageDescription</key>
+    <string>需要此权限来控制鼠标和键盘</string>
+    <key>NSAccessibilityUsageDescription</key>
+    <string>需要辅助功能权限来模拟鼠标和键盘输入</string>
+    
+    <!-- 文档类型支持 -->
+    <key>CFBundleDocumentTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleTypeExtensions</key>
+            <array>
+                <string>gamepadconfig</string>
+            </array>
+            <key>CFBundleTypeName</key>
+            <string>GamepadSwift Configuration</string>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>LSHandlerRank</key>
+            <string>Owner</string>
+        </dict>
+    </array>
+    
+    <!-- 安全设置 -->
+    <key>com.apple.security.app-sandbox</key>
+    <true/>
+</dict>
+</plist>
