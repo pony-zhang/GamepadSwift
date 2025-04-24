@@ -54,9 +54,9 @@
         },
         {
             "buttonId": "leftTrigger",
-            "actionType": "mouseScroll",
+            "actionType": "keyCombo",
             "actionParams": {
-                "dy": "1"
+                "keyCodes": "55,48"
             },
             "sensitivity": 5.0,
             "deadzone": 0.1

@@ -111,7 +111,6 @@ public class InputMapper {
                 // 应用灵敏度
                 dx = values.x * stickMapping.sensitivity * config.settings.mouseSpeed
                 dy = values.y * stickMapping.sensitivity * config.settings.mouseSpeed
-
             }
 
             if abs(dx) <= stickMapping.deadzone && abs(dy) <= stickMapping.deadzone {
